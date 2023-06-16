@@ -4,13 +4,13 @@ import { Product } from "../../types/types";
 
 type InitialState = {
   products: Product[];
-  value: Product[];
+  wishProducts: Product[];
   isLoading: boolean;
 };
 
 const initialState: InitialState = {
   products: [],
-  value: [],
+  wishProducts: [],
   isLoading: true,
 };
 
@@ -22,8 +22,11 @@ const productSlice = createSlice({
       state.products = action.payload;
       state.isLoading = false;
     },
-    addToWishList: (state, actions: PayloadAction<Product>) => {
-      state.value = [...state.value, actions.payload];
+    addToWishList: (state, action: PayloadAction<Product>) => {
+      state.wishProducts.push(action.payload);
+    },
+    removeFromWishList: (state, action: PayloadAction<Product[]>) => {
+      state.wishProducts = action.payload;
     },
   },
 });
