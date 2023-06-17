@@ -9,6 +9,7 @@ import Brand from "./pages/Brand";
 import Sustainability from "./pages/Sustainability";
 import AboutUs from "./pages/AboutUs";
 import Footer from "./components/Footer";
+import ProductDetails from "./pages/ProductDetails";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/brand" element={<Brand />} />
         <Route path="/sustainability" element={<Sustainability />} />
         <Route path="/about_us" element={<AboutUs />} />
+        <Route path="/products:id" element={<ProductDetails />} />
       </Routes>
       <Footer />
     </div>

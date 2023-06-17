@@ -1,37 +1,44 @@
-import { useState } from "react";
 import { Drawer, ListItem, ListItemText } from "@mui/material";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
+import { productActions } from "../redux/slices/products";
+
+import "./Component.css";
 
 export default function WishList() {
-  const [open, setOpen] = useState(false);
-
   const wishList = useSelector(
     (state: RootState) => state.products.wishProducts
   );
 
-  const mappedWishList = wishList?.map((item) => (
-    <ListItem key={item.id}>
-      <img src={item.images[0]} alt={item.title} />
-      <ListItemText>{item.title}</ListItemText>
-    </ListItem>
-  ));
+  const openDrawer = useSelector((state: RootState) => state.products.setOpen);
+
+  const dispatch = useDispatch();
 
   const getList = () => (
-    <div style={{ width: 250 }} onClick={() => setOpen(false)}>
+    <div
+      style={{ width: 250 }}
+      onClick={() => dispatch(productActions.toggleWishList())}
+    >
       <h3>Wish List</h3>
-      {mappedWishList}
+      {wishList?.map((item) => (
+        <ListItem key={item.id}>
+          <img className="wishListImg" src={item.images[0]} alt={item.title} />
+          <ListItemText>{item.title}</ListItemText>
+        </ListItem>
+      ))}
     </div>
   );
 
-  const handleWishList = (
+  return (
     <div>
-      <div onClick={() => setOpen(true)}>Wish List</div>
-      <Drawer open={open} anchor={"right"} onClose={() => setOpen(false)}>
+      <Drawer
+        open={openDrawer}
+        anchor={"right"}
+        onClick={() => dispatch(productActions.toggleWishList())}
+        onClose={() => dispatch(productActions.toggleWishList())}
+      >
         {getList()}
       </Drawer>
     </div>
   );
-
-  return { handleWishList };
 }

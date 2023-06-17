@@ -2,7 +2,7 @@ import axios from "axios";
 import { productActions } from "../slices/products";
 import { AppDispatch } from "../store";
 
-const productUrl = "https://dummyjson.com/products?limit=100";
+const productUrl = "https://dummyjson.com/products/";
 
 export default function fetchProductData() {
   return async (dispatch: AppDispatch) => {

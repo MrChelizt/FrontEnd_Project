@@ -6,12 +6,14 @@ type InitialState = {
   products: Product[];
   wishProducts: Product[];
   isLoading: boolean;
+  setOpen: boolean;
 };
 
 const initialState: InitialState = {
   products: [],
   wishProducts: [],
   isLoading: true,
+  setOpen: false,
 };
 
 const productSlice = createSlice({
@@ -27,6 +29,9 @@ const productSlice = createSlice({
     },
     removeFromWishList: (state, action: PayloadAction<Product[]>) => {
       state.wishProducts = action.payload;
+    },
+    toggleWishList: (state) => {
+      state.setOpen = !state.setOpen;
     },
   },
 });

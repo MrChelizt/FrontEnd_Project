@@ -13,6 +13,7 @@ import { Product } from "../types/types";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { productActions } from "../redux/slices/products";
+import { Link } from "react-router-dom";
 
 type Prop = {
   item: Product;
@@ -43,12 +44,14 @@ export default function ProductItem({ item }: Prop) {
   return (
     <Grid item xs={3}>
       <Card sx={{ maxWidth: 345 }}>
-        <CardMedia
-          component="img"
-          height="250"
-          image={item.images[0]}
-          alt={item.description}
-        />
+        <Link to={`/products/${item.id}`}>
+          <CardMedia
+            component="img"
+            height="250"
+            image={item.images[0]}
+            alt={item.description}
+          />
+        </Link>
         <CardContent>
           <Typography
             variant="body2"
