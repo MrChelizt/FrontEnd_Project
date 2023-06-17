@@ -13,6 +13,8 @@ export default function NavBar() {
     (state: RootState) => state.products.wishProducts
   );
 
+  const cartCount = useSelector((state: RootState) => state.cart.totalCount);
+
   const dispatch = useDispatch();
 
   return (
@@ -40,7 +42,7 @@ export default function NavBar() {
         </li>
         <li>
           <Link className="link" to="/cart">
-            <Badge showZero color="primary">
+            <Badge badgeContent={cartCount} showZero color="primary">
               Cart
             </Badge>
           </Link>

@@ -28,7 +28,6 @@ export default function ProductList() {
     <ProductItem key={item.id} item={item} />
   ));
 
-  console.log(productList);
   if (isLoading) {
     return <Loading />;
   }

@@ -6,3 +6,8 @@ export type Product = {
   description: string;
   images: string[];
 };
+
+export type CartRecord = {
+  product: Product;
+  count: number;
+};

@@ -22,7 +22,7 @@ function App() {
         <Route path="/brand" element={<Brand />} />
         <Route path="/sustainability" element={<Sustainability />} />
         <Route path="/about_us" element={<AboutUs />} />
-        <Route path="/products:id" element={<ProductDetails />} />
+        <Route path="/products/:id" element={<ProductDetails />} />
       </Routes>
       <Footer />
     </div>

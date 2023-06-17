@@ -70,7 +70,7 @@ export default function ProductItem({ item }: Prop) {
           disableSpacing
           sx={{ display: "flex", justifyContent: "space-around" }}
         >
-          <Typography>{item.price} €</Typography>
+          <Typography>€ {item.price}</Typography>
           <IconButton
             aria-label="add to favorites"
             onClick={() => addToWishList(item)}
