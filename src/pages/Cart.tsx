@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../redux/store";
-import CartItem from "../components/CartItem";
-import { cartActions } from "../redux/slices/cart";
 import { Button } from "@mui/material";
+
+import CartItem from "../components/CartItem";
+import { RootState } from "../redux/store";
+import { cartActions } from "../redux/slices/cart";
 
 export default function Cart() {
   const cartItems = useSelector((state: RootState) => state.cart.cartItems);

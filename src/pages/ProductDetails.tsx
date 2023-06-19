@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
-import { RootState } from "../redux/store";
 import { Button } from "@mui/material";
+import { useNavigate, useParams } from "react-router-dom";
+
+import { RootState } from "../redux/store";
 import { cartActions } from "../redux/slices/cart";
 
 export default function ProductDetails() {

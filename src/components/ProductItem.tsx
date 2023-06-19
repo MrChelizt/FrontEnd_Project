@@ -8,12 +8,12 @@ import {
   Grid,
 } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 import { Product } from "../types/types";
-import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { productActions } from "../redux/slices/products";
-import { Link } from "react-router-dom";
 
 type Prop = {
   item: Product;
