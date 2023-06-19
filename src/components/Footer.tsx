@@ -9,6 +9,7 @@ import { Box } from "@mui/material";
 
 import Logo from "../assets/logo-black.png";
 import "./Component.css";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -36,7 +37,7 @@ export default function Footer() {
       </Box>
       <p className="footerText">
         The content of this website is copyright protected and belongs to
-        MrChelizt. READ MORE.
+        MrChelizt. <Link to="/copyright">READ MORE</Link>.
       </p>
       <img src={Logo} alt="MrChelizt" height={40} />
       <p className="footerText">Netherlands | €</p>
