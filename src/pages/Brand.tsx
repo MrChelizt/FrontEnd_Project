@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Brand() {
   return (
     <div style={{ width: "60vw" }}>

@@ -1,3 +1,9 @@
+import CarouselComponent from "../components/CarouselComponent";
+
 export default function Home() {
-  return <div>Home</div>;
+  return (
+    <div>
+      <CarouselComponent />
+    </div>
+  );
 }
