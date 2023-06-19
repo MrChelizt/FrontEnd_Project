@@ -1,15 +1,17 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
+
+import "./Component.css";
+
 import {
   faFacebookSquare,
   faInstagramSquare,
   faTwitterSquare,
   faYoutubeSquare,
 } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Box } from "@mui/material";
 
 import Logo from "../assets/logo-black.png";
-import "./Component.css";
-import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (

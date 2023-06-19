@@ -1,15 +1,15 @@
 import { Route, Routes } from "react-router-dom";
 
-import Home from "./pages/Home";
-import Products from "./pages/Products";
-import Cart from "./pages/Cart";
-import Brand from "./pages/Brand";
-import Sustainability from "./pages/Sustainability";
-import AboutUs from "./pages/AboutUs";
 import Footer from "./components/Footer";
-import ProductDetails from "./pages/ProductDetails";
 import Header from "./components/Header/Header";
+import AboutUs from "./pages/AboutUs";
+import Brand from "./pages/Brand";
+import Cart from "./pages/Cart";
 import Copyright from "./pages/Copyright";
+import Home from "./pages/Home";
+import ProductDetails from "./pages/ProductDetails";
+import Products from "./pages/Products";
+import Sustainability from "./pages/Sustainability";
 
 import "./App.css";
 

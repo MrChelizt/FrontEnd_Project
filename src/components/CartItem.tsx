@@ -1,8 +1,9 @@
-import { Box, Button } from "@mui/material";
 import { useDispatch } from "react-redux";
 
-import { CartRecord } from "../types/types";
+import { Box, Button } from "@mui/material";
+
 import { cartActions } from "../redux/slices/cart";
+import { CartRecord } from "../types/types";
 
 type Prop = {
   index: number;

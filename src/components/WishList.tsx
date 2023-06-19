@@ -1,8 +1,9 @@
-import { Drawer, ListItem, ListItemText } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 
-import { RootState } from "../redux/store";
+import { Drawer, ListItem, ListItemText } from "@mui/material";
+
 import { productActions } from "../redux/slices/products";
+import { RootState } from "../redux/store";
 
 import "./Component.css";
 

@@ -1,10 +1,11 @@
-import { Badge } from "@mui/material";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
-import WishList from "../WishList";
-import { RootState } from "../../redux/store";
+import { Badge } from "@mui/material";
+
 import { productActions } from "../../redux/slices/products";
+import { RootState } from "../../redux/store";
+import WishList from "../WishList";
 
 import "../Component.css";
 

@@ -1,12 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Box, Button } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
+
+import { Box, Button } from "@mui/material";
+
+import { cartActions } from "../redux/slices/cart";
+import { RootState } from "../redux/store";
 
 import "react-toastify/dist/ReactToastify.css";
-
-import { RootState } from "../redux/store";
-import { cartActions } from "../redux/slices/cart";
 
 export default function ProductDetails() {
   const { id } = useParams();

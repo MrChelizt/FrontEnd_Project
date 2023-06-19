@@ -1,5 +1,6 @@
 import { ChangeEvent, useState } from "react";
 import { useDispatch } from "react-redux";
+
 import { Box, TextField } from "@mui/material";
 
 import { searchActions } from "../redux/slices/search";

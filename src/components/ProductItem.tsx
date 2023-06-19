@@ -1,22 +1,23 @@
-import {
-  Card,
-  CardMedia,
-  CardContent,
-  CardActions,
-  IconButton,
-  Typography,
-  Grid,
-} from "@mui/material";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
+
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import {
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Grid,
+  IconButton,
+  Typography,
+} from "@mui/material";
+
+import { productActions } from "../redux/slices/products";
+import { RootState } from "../redux/store";
+import { Product } from "../types/types";
 
 import "react-toastify/dist/ReactToastify.css";
-
-import { Product } from "../types/types";
-import { RootState } from "../redux/store";
-import { productActions } from "../redux/slices/products";
 
 type Prop = {
   item: Product;
