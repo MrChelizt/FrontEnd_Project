@@ -1,8 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 
-import "./App.css";
 import Home from "./pages/Home";
-import NavBar from "./components/NavBar";
 import Products from "./pages/Products";
 import Cart from "./pages/Cart";
 import Brand from "./pages/Brand";
@@ -11,10 +9,13 @@ import AboutUs from "./pages/AboutUs";
 import Footer from "./components/Footer";
 import ProductDetails from "./pages/ProductDetails";
 
+import "./App.css";
+import Header from "./components/Header/Header";
+
 function App() {
   return (
     <div className="App">
-      <NavBar />
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />

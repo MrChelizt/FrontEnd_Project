@@ -22,7 +22,7 @@ export default function ProductDetails() {
 
   return (
     <div style={{ display: "flex", margin: 20 }}>
-      <img src={productDetails?.images[0]} />
+      <img src={productDetails?.images[0]} alt={productDetails?.title} />
       <div
         style={{
           margin: 20,

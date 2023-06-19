@@ -29,3 +29,12 @@
   object-fit: "cover";
   margin: 5px;
 }
+
+.footerText {
+  font-size: small;
+}
+
+.icon {
+  text-decoration: none;
+  color: black;
+}

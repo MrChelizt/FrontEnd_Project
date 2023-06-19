@@ -2,11 +2,11 @@ import { Badge } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import WishList from "./WishList";
-import { RootState } from "../redux/store";
-import { productActions } from "../redux/slices/products";
+import WishList from "../WishList";
+import { RootState } from "../../redux/store";
+import { productActions } from "../../redux/slices/products";
 
-import "./Component.css";
+import "../Component.css";
 
 export default function NavBar() {
   const wishList = useSelector(
