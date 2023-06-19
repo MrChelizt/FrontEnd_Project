@@ -1,9 +1,9 @@
 import Carousel from "react-material-ui-carousel";
 
-import Photo1 from "../images/photo-1.jpg";
-import Photo2 from "../images/photo-2.jpg";
-import Photo3 from "../images/photo-3.jpg";
-import Photo4 from "../images/photo-4.jpg";
+import Photo1 from "../assets/photo-1.jpg";
+import Photo2 from "../assets/photo-2.jpg";
+import Photo3 from "../assets/photo-3.jpg";
+import Photo4 from "../assets/photo-4.jpg";
 
 export default function CarouselComponent() {
   const photoArray = [
@@ -12,6 +12,7 @@ export default function CarouselComponent() {
     { id: 3, img: Photo3, desc: "photo-3" },
     { id: 4, img: Photo4, desc: "photo-4" },
   ];
+
   return (
     <div>
       <Carousel sx={{ width: "100vw", height: "80vh", marginBottom: 2 }}>

@@ -1,6 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 import { RootState } from "../redux/store";
 import { cartActions } from "../redux/slices/cart";
@@ -20,8 +23,16 @@ export default function ProductDetails() {
     (item) => item.id === parseInt(id || "-1")
   );
 
+  const handleAddToCartToast = () => {
+    toast.success(`${productDetails?.title} has been added to the cart`, {
+      position: toast.POSITION.BOTTOM_LEFT,
+      autoClose: 2000,
+      hideProgressBar: true,
+    });
+  };
+
   return (
-    <div style={{ display: "flex", margin: 20 }}>
+    <Box display="flex" m={2}>
       <img src={productDetails?.images[0]} alt={productDetails?.title} />
       <div
         style={{
@@ -31,22 +42,26 @@ export default function ProductDetails() {
         <p>{productDetails?.title}</p>
         <p>€ {productDetails?.price}</p>
         <p>{productDetails?.description}</p>
-        <div>
+        <Box display="flex" justifyContent="center">
           <Button
             variant="text"
-            onClick={() => dispatch(cartActions.addToCart(productDetails))}
+            onClick={() => {
+              dispatch(cartActions.addToCart(productDetails));
+              handleAddToCartToast();
+            }}
           >
             Add To Cart
           </Button>
+          <ToastContainer />
           <Button variant="text" onClick={navigateBack}>
             Back
           </Button>
-        </div>
+        </Box>
         <p>
           Members receive free standard shipping and free returns on purchases
           of at least €25
         </p>
       </div>
-    </div>
+    </Box>
   );
 }

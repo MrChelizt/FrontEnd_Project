@@ -10,6 +10,9 @@ import {
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 import { Product } from "../types/types";
 import { RootState } from "../redux/store";
@@ -26,6 +29,22 @@ export default function ProductItem({ item }: Prop) {
 
   const dispatch = useDispatch();
 
+  const handleAddToWishListToast = (item: Product) => {
+    toast.success(`${item.title} has been added to wish list.`, {
+      position: toast.POSITION.BOTTOM_LEFT,
+      autoClose: 2000,
+      hideProgressBar: true,
+    });
+  };
+
+  const handleRemoveFromWishListToast = (item: Product) => {
+    toast.error(`${item.title} has been removed from wish list.`, {
+      position: toast.POSITION.BOTTOM_LEFT,
+      autoClose: 2000,
+      hideProgressBar: true,
+    });
+  };
+
   const addToWishList = (item: Product) => {
     const wishedItem = wishListProducts.some(
       (wishItem) => wishItem.title === item.title
@@ -34,10 +53,13 @@ export default function ProductItem({ item }: Prop) {
     const removeWishedProduct = wishListProducts.filter(
       (removeWishItem) => removeWishItem.title !== item.title
     );
-    dispatch(productActions.removeFromWishList(removeWishedProduct));
 
     if (!wishedItem) {
       dispatch(productActions.addToWishList(item));
+      handleAddToWishListToast(item);
+    } else {
+      dispatch(productActions.removeFromWishList(removeWishedProduct));
+      handleRemoveFromWishListToast(item);
     }
   };
 
@@ -71,9 +93,12 @@ export default function ProductItem({ item }: Prop) {
           sx={{ display: "flex", justifyContent: "space-around" }}
         >
           <Typography>€ {item.price}</Typography>
+          <ToastContainer />
           <IconButton
-            aria-label="add to favorites"
-            onClick={() => addToWishList(item)}
+            aria-label="add to wish list"
+            onClick={() => {
+              addToWishList(item);
+            }}
           >
             <FavoriteIcon
               sx={{

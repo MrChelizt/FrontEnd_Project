@@ -7,7 +7,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { Box } from "@mui/material";
 
-import Logo from "../images/logo-black.png";
+import Logo from "../assets/logo-black.png";
 import "./Component.css";
 
 export default function Footer() {

@@ -1,5 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 import CartItem from "../components/CartItem";
 import { RootState } from "../redux/store";
@@ -15,15 +18,28 @@ export default function Cart() {
     <CartItem key={item.product.id} index={index} item={item} />
   ));
 
+  const handleToastSuccess = () => {
+    toast.success(`Check out successfull with the amount: € ${totalAmount}`, {
+      position: toast.POSITION.BOTTOM_LEFT,
+      autoClose: 2000,
+      hideProgressBar: true,
+    });
+  };
+
   return (
-    <div>
+    <Box display="flex" flexDirection="column" alignItems="center">
       <h1>Your Cart List</h1>
       {mappedCartItems}
       <h3>Total: € {totalAmount}</h3>
-      <Button variant="text">Check Out</Button>
-      <Button variant="text" onClick={() => dispatch(cartActions.cancel())}>
-        Cancel
-      </Button>
-    </div>
+      <Box display="flex">
+        <Button variant="text" onClick={() => handleToastSuccess()}>
+          Check Out
+        </Button>
+        <ToastContainer />
+        <Button variant="text" onClick={() => dispatch(cartActions.cancel())}>
+          Cancel
+        </Button>
+      </Box>
+    </Box>
   );
 }

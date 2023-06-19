@@ -1,5 +1,5 @@
 import NavBar from "./NavBar";
-import Logo from "../../images/logo-no-background.png";
+import Logo from "../../assets/logo-no-background.png";
 
 export default function Header() {
   return (
