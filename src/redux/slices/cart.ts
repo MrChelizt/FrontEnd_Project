@@ -46,7 +46,7 @@ const cartSlice = createSlice({
         state.cartItems.splice(action.payload, 1);
       }
     },
-    cancel(state) {
+    clear(state) {
       state.cartItems = [];
       state.totalCount = 0;
       state.totalAmount = 0;
