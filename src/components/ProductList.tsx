@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { Grid } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../redux/store";
 
+import { AppDispatch, RootState } from "../redux/store";
 import fetchProductData from "../redux/thunk/products";
 import ProductItem from "./ProductItem";
 import Loading from "./Loading";
