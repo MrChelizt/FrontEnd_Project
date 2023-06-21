@@ -1,13 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 
 import { Box, Button } from "@mui/material";
 
 import { cartActions } from "../redux/slices/cart";
 import { RootState } from "../redux/store";
-
-import "react-toastify/dist/ReactToastify.css";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -53,7 +51,6 @@ export default function ProductDetails() {
           >
             Add To Cart
           </Button>
-          <ToastContainer />
           <Button variant="text" onClick={navigateBack}>
             Back
           </Button>

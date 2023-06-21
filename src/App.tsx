@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 import Footer from "./components/Footer";
 import Header from "./components/Header/Header";
@@ -27,6 +28,7 @@ function App() {
         <Route path="/copyright" element={<Copyright />} />
         <Route path="/products/:id" element={<ProductDetails />} />
       </Routes>
+      <ToastContainer />
       <Footer />
     </div>
   );

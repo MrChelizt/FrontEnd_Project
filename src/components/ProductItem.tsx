@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import {
@@ -16,8 +16,6 @@ import {
 import { productActions } from "../redux/slices/products";
 import { RootState } from "../redux/store";
 import { Product } from "../types/types";
-
-import "react-toastify/dist/ReactToastify.css";
 
 type Prop = {
   item: Product;
@@ -94,7 +92,6 @@ export default function ProductItem({ item }: Prop) {
           sx={{ display: "flex", justifyContent: "space-around" }}
         >
           <Typography>€ {item.price}</Typography>
-          <ToastContainer />
           <IconButton
             aria-label="add to wish list"
             onClick={() => {

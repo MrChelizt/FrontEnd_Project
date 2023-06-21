@@ -1,13 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 
 import { Box, Button } from "@mui/material";
 
 import CartItem from "../components/CartItem";
 import { cartActions } from "../redux/slices/cart";
 import { RootState } from "../redux/store";
-
-import "react-toastify/dist/ReactToastify.css";
 
 export default function Cart() {
   const cartItems = useSelector((state: RootState) => state.cart.cartItems);
@@ -50,7 +48,6 @@ export default function Cart() {
         >
           Check Out
         </Button>
-        <ToastContainer />
         <Button
           variant="text"
           onClick={() => {
